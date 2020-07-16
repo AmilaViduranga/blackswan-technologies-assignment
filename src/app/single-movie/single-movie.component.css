@@ -1,0 +1,12 @@
+.close {
+    float: auto;
+    cursor: pointer;
+}
+
+.btn {
+    float: right;
+}
+
+.validation {
+    color: red;
+}

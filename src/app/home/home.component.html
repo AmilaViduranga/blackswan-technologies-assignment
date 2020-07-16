@@ -1,0 +1,65 @@
+<table class="table table-striped" [mfData]="displayMovieList" #mf="mfDataTable" [mfRowsOnPage]="100">
+    <thead>
+        <tr>
+            <th>
+                <mfDefaultSorter by="title">Title</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="year">Year</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="cast">Cast</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="genres">Genres</mfDefaultSorter>
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of mf.data">
+            <td>{{item.title}}</td>
+            <td>{{item.year}}</td>
+            <td>
+                <span *ngIf="item.cast.length > 0">
+                    <span *ngFor="let cast of item.cast" class="badge badge-primary">{{cast}}</span>
+                </span>
+                <span *ngIf="item.cast.length == 0">
+                    <span class="badge badge-danger">No Casts</span>
+                </span>
+            </td>
+            <td>
+                <span *ngIf="item.genres.length > 0">
+                    <span *ngFor="let genre of item.genres" class="badge badge-warning">{{genre}}</span>
+                </span>
+                <span *ngIf="item.genres.length == 0">
+                    <span class="badge badge-danger">No Genres</span>
+                </span>
+            </td>
+            <td>
+                <span class="btn-group">
+                    <button class="btn btn-info" (click)="update(item)">
+                        <mat-icon>create</mat-icon>
+                    </button>
+                    <button class="btn btn-danger" (click)="delete(item)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </span>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>

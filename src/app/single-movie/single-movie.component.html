@@ -1,0 +1,26 @@
+<span class="close" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+</span>
+<div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" placeholder="Movie Title" [(ngModel)]="movie.title">
+    <small class="validation" *ngIf="invalidTitle">{{invalidTitleMessage}}</small>
+</div>
+<div class="form-group">
+    <label>Year</label>
+    <input type="number" class="form-control" placeholder="Movie Year" [(ngModel)]="movie.year">
+    <small class="validation" *ngIf="invalidYear">{{invalidYearMessage}}</small>
+</div>
+<app-label-adder
+    adderName="Casts"
+    [labelArray]="movie.cast"
+    placeholder="Type Casts"
+></app-label-adder>
+<app-label-adder
+    adderName="Generes"
+    [labelArray]="movie.genres"
+    placeholder="Type Generes"
+></app-label-adder> <br><br>
+<button class="btn btn-success" (click)="save(true)">
+    Save
+</button>

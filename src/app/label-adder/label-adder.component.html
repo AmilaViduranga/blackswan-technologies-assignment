@@ -1,0 +1,10 @@
+<span style="color: black;">{{adderName}}</span> <br>
+<span class="label-area" *ngFor="let label of labelArray">
+    <span class="badge badge-info">{{label}}</span>
+</span>
+<div class="btn-group">
+    <input class="form-control" [(ngModel)]="tileName" [placeholder]="placeholder">
+    <span class="btn-primary" (click)="addToList()">
+        <mat-icon>add</mat-icon>
+    </span>
+</div>

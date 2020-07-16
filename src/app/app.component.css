@@ -1,0 +1,30 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+mat-sidenav {
+    width: 280px;
+    padding:15px;
+}
+.mat-drawer { 
+    background-color: #ffffff;
+    color:rgb(10, 10, 10)
+}
+.main-content {
+    padding:20px;
+}
+.toolbar-spacer {
+    padding-right: 10px;
+    margin-left: 10px;
+}
+.btn-add-movie {
+    height: 40px;
+    width: 120px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-add-movie:hover {
+    background-color: black;
+    color: white;
+}
